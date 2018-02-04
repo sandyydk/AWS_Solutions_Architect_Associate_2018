@@ -1,0 +1,17 @@
+
+ SWF --
+ 
+* Simple Workflow Service.
+* Work coordination across components.
+
+* Retention of 1 year. SQS has 14 days. Can come as scenario question.
+
+* SWF presents task oriented API, where SQS offers message oriented API. SQS is for decoupling components. SWF is for managing tasks.
+* SWF ensures task is never duplicated which is not the case with SQS.
+* SWF keeps track of all events in a task but SQS is a standalone queue.
+
+ SWF Actors --
+ 
+* Workflow starters -- An application that initiates a workflow. Can be an e-commerce website when placing an order or a mobile app searching for bus times.
+* Deciders -- Control the flow of activity tasks in a workflow execution. If something finished then what to do next is decided by a decider.
+* Activity Workers -- Carry out the tasks.

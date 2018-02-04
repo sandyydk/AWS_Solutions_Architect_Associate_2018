@@ -1,0 +1,19 @@
+
+AMI can be selected based on --
+
+* Region
+* OS
+* Arch
+* Launch permissions
+* Storage for Root Device (Root Device Volume)
+  * Instance Store (EPHEMERAL STORAGE) -- Less durability. If health is down you lose memory. Takes longer to provision.
+  * EBS Backed Volumes -- If health is degraded, reboot the instance and new virtualization is used.
+  
+  
+  * Instance store volumes cannot be stopped. If underlying host fails, data is lost.
+  * EBS backed volumes can be stopped. Data is not lost if it is stopped.
+  * By default, ROOT volumes will be deleted on termination for EBS volumes, but this can be changed.
+  
+  
+  
+  

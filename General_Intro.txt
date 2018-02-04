@@ -1,0 +1,159 @@
+
+
+Compute --
+EC2
+Elastic Beanstalk -- Only code is the concern to be looked at
+EC2 Container Service
+Lambda
+Lightsail -- Abstract whole AWS
+
+Storage --
+
+S3
+EFS - Like NAS..Can be attached to multiple EC2
+Glacier
+Snowball -- Manual
+Storage Gateway --  Multiple types
+
+Databases --
+RDS -- MySql, Microsoft SQL Server, Aurora, PostreSQL, Oracle
+DynamoDB -- Non relational
+Elasticache -- Redis like
+Red Shift --- Data Warehousing or BI..Lots of joins etc
+
+
+Migration --
+AWS Migration Hub -- Tracking service for apps as you migrate
+Application Discovery Service -- Automated set of tools discovers apps and dependencies like on SQL server etc
+Database Migration Service -- Migrate database from On premise to AWS
+Server Migration Service -- Same as above
+Snowball -- bit of storage and migration..Migrate large amount of data in TBs
+
+Networking & Content Delivery --
+VPC -- Virtual data center like firewalls, configurations,ACL, --> Important
+CloudFront 
+Route 53 -- DNS service
+API Gateway -- Important
+Direct Connect -- Way of running dedicated line from corporate office/data center to AWS and it will connect to VPC --> IMPORTANT
+
+
+Developer Tools -- Not important. Don't appear as of now
+CodeStar -- Devs working together..Project Management
+CodeCommit -- Store code
+CodeBuild -- Compile and test and build 
+CodeDeploy
+CodePipeline - CI/CD
+X-Ray -- Debug and Analyze
+Cloud9
+
+
+Management Tools --
+CloudWatch --> IMPORTANT for SysOps
+CloudFormation --> IMPORTANT FOR SOLUTIONS ARCHITECT -- way of scripting infra
+CloudTrail -- Logging everything in AWS. Stores only for a week by default -- IMPORTANT
+Config -- Monitors config entire env..Point in time snapshot.
+OpsWorks -- Similiar to EB...Uses Chef and Puppet. Automate config -- IMPORTANT
+Service Catalog -- List of services approved to be used like databases,etc. Governance and compliance
+Systems Manager -- EC2, patch maintenance over 100s of EC2...
+Trusted Advisor -- IMPORTANT -- Trsuted Advisor v/s Inspector..Advise around security like if ports open...Not enough usage of AWS services...Accountant like..
+Managed Services -- AWS manages services...
+
+Media Services -- 2017 new one
+Elastic Transcoder -- Old one..Video is resized on different screen sizes..transcoding
+MediaConvert -- File based transcoding
+MediaLive -- Live video processing
+mediaPackage -- Delivery over internet
+MediaStore -- Storage for media..Can be used for live streaming
+MediaTailor -- Targeted advertising
+
+Machine Learning -- 2017 not important..dont come in exam
+SageMaker -- Deep Learning
+Comprehend -- Sentiment Analysis
+Deep Lens -- Artificially aware camera....Use camera of the device..Physical hardware not connected to AWS
+Lex -- Chatbot
+Machine Learning -- Entry level compared to Deep Learning
+Polly -- Text-to-Speech
+Rekognition -- Upload a file. Tell you what's in it.
+Amazon Translate -- Like Google Translate
+Amazon Transcribe -- It sort of adds subtitles for videos. Brand new service. Upload video files and it converts speech to text.
+
+
+Analytics --
+Athena -- Allows you to run SQL queries in S3 bucket. Serverless and no infra to manage. Not in exam.
+EMR -- Features in exam -- IMPORTANT -- Process bigdata stuff
+CloudSearch
+ElasticSearch Service
+Kinesis -- IMPORTANT -- Way of ingesting large amounts of data into AWS like tweets, hashtags.
+Kinesis Video Streams -- Kinesis for video streams
+QuickSight -- BI tool at a fraction of the cost.
+Data Pipeline -- IMPORTANT
+Glue -- ETL -- Migration
+
+
+Security & Identity & Compliance --
+IAM -- IMPORTANT 
+Cognito -- Way of doing device authentication using Facebook or Gmail on mobile phone. Once authenticated use Cognito to request temporary access in like DynamoDB. It's for mobile devices.
+GuardDuty -- Not in examInspector -- Agent in Virtual machines on EC2. Check for security vulnerability and generate report weekly or as scheduled. -- IMPORTANT 
+Macie -- Personally identifiable info and alert.
+Certificate Manager -- SSL certificates
+CloudHSM -- Used to store keys in dedicated hardware...But here it is now cloud one with 1.20$ per hr. IMPORTANT 
+Directory Service -- Microsoft Active Directory in AWS integration  -- IMPORTANT
+WAF -- Firewall at layer 7. SQL injunction etc is stopped. Application layer -- IMPORTANT
+Shield -- Default for CloudFront , Route53..It's DDOS mitigator. $3000/month -- IMPORTANT
+Artifact -- Aufit and compliance reports
+
+Mobile Services --
+Mobile Hub -- Management console for mobile app if you already have it. Not in exams.
+Pinpoint -- new service. Targeted push notification service.
+AWS AppSync -- Updates data in web and mobile application in real time. Not for exams
+Device Farm -- Updating apps in android etc. Not for examMobile Analytics -- Not in exams
+
+AR / VR --
+Sumerian not in exams
+
+
+Step Functions -- Not in exams
+Amazon MQ -- Like Rabbit MQ
+SNS -- IMPORTANT
+SQS -- IMPORTANT
+SWF -- Simple Workflow Service
+
+Customer Engagement -- 
+Connect -- Not in exam
+Simple Email Service -- Important
+
+Business Productivity -- 
+Alexa for Business - Not in exam
+Chime --
+Work Docs -- Like Dropbox for AWS. IMPORTANT
+WorkMail -- Office 365 like
+
+Desktop & App Streaming --
+Workspaces -- Desktop in cloud
+AppStream 2.0 -- 
+
+IOT --
+iOT --
+iOT Device Management --
+Amazon FreeRTOS --
+Greengrass 
+
+Game Development --
+GameLift -- Not in exams
+
+EXAMS IMPORTANT TOPICS --
+
+Analytics
+Management ToolsMigration
+ComputeDatabases
+Storage
+NetworkingSecurity
+Application Integration
+Desktop & App Streaming
+Global Infra
+
+
+
+
+
+

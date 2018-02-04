@@ -1,0 +1,25 @@
+
+
+VPC Flow Logs --
+
+* VPC Flow Logs let you capture info about IP data flowing in and out of VPCinterfaces.
+* It is stored using Amazon CloudWatch logs.
+
+Captured at 3 levels --
+
+* VPC
+* Subnet
+* Network Interface level
+
+TIPS --
+
+* Cannot enable FLow logs for VPCs peered with your VPC unless the peer VPC is in your account.
+* Cannot tag a flow log.
+* Can't change IAM once a flow log has been created.
+* Not all IP traffic is monitored :
+  * Traffic to Amazon DNS is not. Custom DNS is logged if it's used.
+  * Traffic for Windows instance to generate Amazon WIndows license.
+  * Traffic to and from 169.254.169.254 for instance metadata.
+  * DHCP traffic.
+  * Traffic to reserved IP address for the default VPC router.
+  

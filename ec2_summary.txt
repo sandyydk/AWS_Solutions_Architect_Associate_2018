@@ -1,0 +1,97 @@
+
+
+EC2 Summary --
+
+* Know differences b/w :
+   * On Demand
+   * Spot
+   * Reserved
+   * Dedicated Hosts
+   
+* Spot instance --
+	* If you terminate, you pay for the hour.
+	* If AWS terminates because spot price went above bid price, they give it free for that hour.
+	
+	* DIRTMCGFPX
+	
+	
+ * EBS
+   * SSD, GP2 - upto 10000 IOPS
+   * SSD, Provisioned IOPS - I01 - More than 10000 IOPS
+   * HDD, Throughput Optimized - ST1 - frequently accessed workloads.
+   * HDD, Cold -SC1 - less frequently data.
+   * HDD, Magnetic - Standard- cheap, infrequently accessed, bootable.
+   
+* One EBS volume cannot be mounted to multiple EC2 instances, instead use EFS.
+
+* Termination protection is turned off by default.
+* On EBS backed instance, terminating instance results in root EBS volume getting deleted. This is the default.
+* Root volumes cannot be encrypted by default. 
+
+
+Volumes v/s Snapshots --
+
+* Volumes exist on EBS  
+  * Virtual Hard disk
+* Snapshots exist on S3.
+*Point in time snapshot.
+* Snapshots are incremental in nature.
+
+* Snapshots of encrypted volumes are encrypted.
+* Volumes restored from encrypted snapshots are encrypted.
+* Snapshots can be shared only if they are not encrypted.
+
+* To create snapshot for root volume, stop the instance.
+
+EBS vs Instance Store --
+
+* Instance store volumes are sometimes called Ephemeral Storage.
+* Instance store volumes cannot be stopped. If underlying host fails, data is lost.
+* EBS backed instances can be stopped. Data will not be lost.
+* Can reboot both, data is not lost.
+
+
+* RAID array snapshot means stop IO to it for data consistency.
+
+* AMI's are regional. You can only launch an AMI from the region in which it is stored. However it's allowed to copy AMI's to other regions using the console, command line or 
+Amazon EC2 API.
+
+CloudWatch --
+
+* Standard = 5 min
+* Detailed = 1 min 
+
+* CloudWatch is for performance monitoring.
+* Cloudtrail is for auditing.
+
+* CloudWatch gives Dashboards, Alarms, Events, Logs.
+
+
+Roles --
+
+* More secure than storing access key in instances.
+* Roles are easier to manage.
+* Roles can now be assigned to an EC2 instance after it has been provisioned. It was not possible earlier.
+* Roles are universal like IAM.
+
+Instance metadata --
+
+public IP
+* http://169.254.169.254/latest/meta-data/
+
+EFS --
+
+* Pay for only what you use.
+* NFS protocol NFSv4
+* Can scale to Petabytes.
+* Thousands of concurrent NFS connections.
+* Data is stored across multiple AZ's within a region.
+* Read After Write Consistency.
+
+Lambda --
+
+* Serverless. 
+* Event driven.
+
+* Triggers --
+  * RDS cannot be a trigger.

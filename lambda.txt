@@ -1,0 +1,19 @@
+
+
+Lambda --
+
+* It's region specific.
+* Event driven.
+* Possible triggers is an exam question.
+* One set of code responding to multiple requests. Auto scale out.
+
+Supported languages --
+
+* C#
+* Python
+* Java 8
+* Nodejs
+
+* Priced on number of requests. First million are free.
+* priced on duration as well.
+* Threshhold is 5 mins.

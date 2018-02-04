@@ -1,0 +1,29 @@
+
+
+IAM --
+
+Setting up users and granting access level
+Cenralized access. Shared Access.
+Granular Permissions
+Multifactor Authentication
+Provide temporary access for users/devices and services when necessary
+Password rotation policy
+Integrates with AWS services
+Compliance
+
+Critical Terms:
+
+Users -- End Users
+Groups -- like finance group. Grouping users
+Roles -- Roles are assigned AWS resources
+Policies -- Document which defines permissions. Policy is attached to users, groups or roles. The topmost thing.
+
+
+* IAM is universal. No regions for it.
+* "Root Account" is the first account created with admin access.
+* New USers have no permissios when first created.
+* New Users are assigned Access Key ID & Secret Access Keys when first created.
+* Credentials can be viewed only once. Else regenerate.
+* Setup Multifactor as a good practice.
+* Create and customize password rotation.
+* Power User role has access to everything except management of groups and users.

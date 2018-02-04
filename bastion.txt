@@ -1,0 +1,11 @@
+
+
+NAT v/c Bastion --
+
+* Bastion is a jump boxes. 
+* Access instances in private subnet using a Bastion.
+* making a bstion highly available --
+  * Using multiple subnets in different AZs.
+  * ASGs.
+
+* Bastion is used to administer instances in private subnets and not to provide them internet access as in NAT.

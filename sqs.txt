@@ -1,0 +1,45 @@
+
+
+SQS --
+
+* First AWS service.
+* Message queue. Distributed queue system.
+* SQS is a pull based system. Push based sytem is SNS. 
+* 256KB is the mx size of text in any form.
+* Auto scaling can be made around this SQS.
+* Messages can be kept in the queue from 1 minute to 14 days. The default is 4 days.
+* VISIBILITY TIMEOUT -- Amount of time a message is invisible in the queue till a reader finishes processing it. If processing fails it is added back to the queue and another
+  reader processes it. Max is 12 hours. So don't choose SQS if jobs require over 12 hours.
+* Types --
+  * Standard (default)
+  * FIFO
+  
+  Standard Queue --
+  
+  * Try their best to ensure FIFO but it is occasionally missed. 
+  * Unlimited number of transactions per second.
+  * Best-effort ordering.
+  * Duplicates maybe introduced occasionally.
+  
+  FIFO --
+  
+  * Ensure FIFO ordering.
+  * No duplicates.
+  * Limited to 300 transactions per second. 
+  
+ Long polling --
+ 
+ * Return only if a message is present in the queue.
+ 
+ Short Polling --
+ 
+ * Return even if there is no message in the queue.
+ 
+ 
+Q) You run a website which hosts videos and you have two types of members, premium fee paying members and free members. All videos uploaded by both your premium members and free members are processed by a fleet of EC2 instances which will poll SQS as videos are uploaded. However you need to ensure that your premium fee paying members videos have a higher priority than your free members. How do you design SQS?
+
+
+SQS allows you to set priorities on individual items within the queue, so simply set the fee paying members at a higher priority than your free members.
+
+
+A -- Create 2 SQS one for premium and another for free members. EC2 should poll premium one first and only if it is empty the free ones.

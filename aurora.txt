@@ -1,0 +1,20 @@
+
+Aurora --
+
+* AWS specific.
+* MySQL compatible.
+* 5 times better performance than MySQL.
+
+
+Scaling --
+
+* Start with 10Gb, Scales in 10Gb increments to 64Tb. Storage Autoscaling.
+* Compute resource scaling upto 32vCPUs and 244Gb of Memory. Not push button scaling. Manual.
+* 2 copies of data in each AZ with min 3 AZ. 6 copies of data in total.
+* Self healing storage.
+
+Aurora Replicas --
+
+* 2 Types of Replicas.
+* Aurora Replicas -- 15 max.
+* MySQL Read Replicas -- max 5.

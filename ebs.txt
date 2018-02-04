@@ -1,0 +1,41 @@
+
+EBS Volumes --
+
+* EBS as noted before is like a hard disk in a computer and hence it's not possible to have EBS volumes in a different AZ as compared to an EC2 instance.
+
+* Can modify volume on the go withput downtime if it's SSD or IO1 but not for standard magnetic storage.
+
+* Inorder to move EBS volumes from one AZ to another we need to create snapshot of it first. A new volume can be created out of the snapshot. Same applies to moving across a region.
+* Out of a snapshot it can be used as a root volume.
+
+* Snapshots include incremental changes only. Not the whole changes , i.e. not a copy.
+* AMI's can be created out of snapshots or volumes.
+* EBS volume size nad storage type can be changed on the go.
+
+* Volumes will ALWAYS be in the same availability zone as the EC2 instance.
+* Snapshots of encrypted volumes are encrypted automatically.
+* Volumes restored from encrypted snapshots are encrypted automatically.
+* Snapshots can be shared only if they are not encrypted. They can be made public or shared with other AWS accounts.
+
+
+Windows Instance, RAID, Volumes & Snapshots --
+
+RAID = Redundant Array of Independent Disks
+
+RAID 0 - Striped, No Redundancy, Good Performance.
+RAID 1 - Mirrored, Redundancy
+RAID 5 - Good for reads, bad for write. Checksum is used to replicate on all disks. AWS does not recommend it.
+RAID 10 - Striped, Mirrored, Good Redundancy, Good performance.
+
+* Cassandra like DB which is not supported in AWS can be done using RAID to support additional IO.
+
+* Snapshot in a RAID array is tricky.
+
+* We need to take application consistent snapshot. This is due to cache data not included in snapshot which is fine in single volumes.
+  * Freeze file system.
+  * Unmount RAID Array
+  * Shutting down associated EC2 instance.
+
+ENcryption --
+
+* Amazon EBS encryption uses AWS Key Management Service (AWS KMS) customer master keys (CMKs) when creating encrypted volumes and any snapshots created from them. A unique AWS-managed CMK is created for you automatically in each region where you store AWS assets. This key is used for Amazon EBS encryption unless you specify a customer-managed CMK that you created separately using AWS KMS.

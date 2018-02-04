@@ -1,0 +1,6 @@
+
+Elastic Load Balancers --
+
+* In Load balancers, we don't get IP addresses, only DNS.
+* InService, or OutOfService.
+* Health checks by checking one file.

@@ -1,0 +1,23 @@
+
+
+Elasticache --
+
+* In-memory cache in cloud.
+* Redis & memcached.
+
+* Used for read heavy applications.
+
+Memcached --
+ * Object based.
+ 
+Redis --
+  * Key-Value based.
+  * Supports multi AZ. master/Slave replication to achieve redundancy.
+  
+TIPS --
+
+* Elasticache is good if a DB is under load and is required for read heavy usage.
+
+* Redshift if managmenent is causing stress by running queries for OLAP.
+
+* Read replicas for RDS.

@@ -1,0 +1,47 @@
+
+Redshift --
+
+* Data Warehousing database service. 
+* Fully managed, petabyte-scale.
+* $0.25/hr with no commitments.
+
+* It's OLAP transaction type. Online Analytics Processing.
+
+Configuration --
+
+* Single Node (160Gb)
+* Multi Node has -- 
+  * Leader Node (manages client connections and receives queries)
+  * Compute Node (store data and perform queries and computations). Upto 128 Compute Nodes.
+  
+* Columnar Data Storage :
+  * Instead of storing data as a series of rows, it's organized by column. Column based ones are ideal for data warehousing and analytics. 
+  * This is becasue columnar data is stored sequentially.
+  
+* Advanced Compression -- 
+
+* Columnar data can be better compressed.
+* Redshift has no indexes.
+
+* massively Parallel Processing (MPP) --
+
+* Distributes queries across nodes automatically.
+
+Pricing --
+
+* 1 unit/node/hr
+* Not charged for leader node, only for compute nodes.
+
+* Backup
+* Data transfer
+
+Encryption --
+
+* Encrypted in transit SSL
+* Encrypted at REST AES 256
+
+* Only in 1 AZ.
+
+* Can restore snapshots.
+
+* Redshift blcok size for columnar storage -- 1024KB/ 1MB.

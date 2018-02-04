@@ -1,0 +1,23 @@
+
+
+Glacier --
+
+* Lifecycle management is done using it.
+* Min 90 days is charged for data stored in Glacier.
+* Transition to S - IAS after 30 days only
+* Transition to Glacier after 30 days after IA only.
+* Permanant delete is only possible using LifeCycle policies.
+
+CloudFront --
+
+* Edge Location is where the content will be cached. Separate from AZ/Region.
+* Origin -- Origin of files to be cached. Can be S3, EC2 Instance, Elastic Load Balancer or Route 53.
+* DIstribution -- Collection of Edge Locations.
+* Edge location pulls data from the Origin and holds till TTL. First user will have slow response but others will get cached data.
+* Edge locations are not just READ only, you can write as well.
+* Cached objects can be cleared but it's charged for.
+* Restrict Viewer Access let's you protect/restrict access to CloudFront data to signed urls or cookies.
+* Multiple origins is possible.
+* Custom error pages is possible.
+* Geographical restriction is possible. (Whitelist/Blacklist)
+* Default TTL is 24 hours.

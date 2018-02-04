@@ -1,0 +1,16 @@
+
+AUTOSCALING --
+
+* AZ with most instances is chosen and then the one with oldest launch config is terminated by default termination policy.
+* Scale Out Types --
+  * Manual
+  * Dynamic
+  * Scheduled
+
+LifeCycle Hooks --
+
+* Pending --> Pending:Wait --> Pending:Proceed --> InService --> Deaching --> Detached 
+   OR
+  Terminating --> Terminating:Wait --> Terminating:Proceed --> Terminated
+
+* Cooldown period starts only after instance goes to InService state. 

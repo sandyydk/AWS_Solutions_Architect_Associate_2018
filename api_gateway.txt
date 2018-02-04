@@ -1,0 +1,14 @@
+
+
+API Gateway --
+
+* API Caching can be done to reduce calls to endpoint and reduce latency.
+* AWS CloudFront is involved in API gateway, integrated to ensure better response to calls made to the API Gateway.
+* Version control can be done using API stages.
+* To ensure that for example an EC2 instance server receives requests only from API Gateway, use SSL Certificates. API Gateway can be used to generate an SSL certificate and us its public key in the backend to verify that HTTP requests to backend system are from API Gateway.
+* If response to requests comes as 429 it means rate limit exceptions. Increase throttling limits.
+* The plain text pipe character (|) is not supported in URL query string and must be encoded.
+* Paths of /ping and /sping are reserved for service health check.
+* Cross-account authentication is not supported. An API caller must be an IAM user of same AWS account of the API owner.
+* STage variables act as environment variables and can be passed onto Lambda functions.
+* Amazon Cognito is like a user pool to manage users who can access APIs.

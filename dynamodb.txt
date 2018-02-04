@@ -1,0 +1,21 @@
+
+DynamoDB --
+
+* NoSQL DB. Supports document and key-value types.
+* Stored on SSD.
+* Spread acrosss 3 geo distinct data centres.
+* Eventual Consistent reads -- Best Read Performance
+  Consistency across all copies of data is useually reached within a second.
+  
+* Strongly Consistent Reads
+  * A strongly consistent read returns a result that reflects all writes that received a successful response prior to the read.
+  
+Pricing --
+
+* Write Throughput $0.0065/hr/10 units
+* Read Throughput $0.0065/hr/50 units
+* Storage = $0.25/Gb/month.
+
+* Expensive for writes but cheap for reads.
+
+* Read Capacity units or Wrote capacity units let you scale immediately. It's called "Push button" scaling. No downtime in scaling as in RDS.

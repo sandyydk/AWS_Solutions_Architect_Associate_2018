@@ -1,0 +1,28 @@
+
+BEST PRACTICES --
+
+* Just-in-Time infra
+* Almost zero upfront investment for infra
+* More efficient resource utilization.
+* Usage-based costing
+* Time to market.
+
+Technical Benefits --
+
+* Automation - "Scriptable infra"
+* Auto-scaling
+* Proactive scaling
+* More efiicient development cycle.
+* Improved testability with separate test environment immediately.
+* Better Disaster recovery.
+* Overflow traffic into the cloud.
+
+* Rule of thumb -- Be a pessimist and design for failure.
+* Decoupling components.
+
+Elasticity Implementation --
+
+* Proactive Cyclic Scaling -- Periodic like weekly or monthly based on predictable demand.
+* Proactive Event-based Scaling -- Scaling when you expect huge traffic like in Flipkart Big Billion day etc.
+* Auto-scaling based on demand -- By using monitoring service, your system can send triggers to scale up or down based on metrics. THis is what Cmpute.io used to provide as a SAAS
+  offering (Got Acquired by CISCO).

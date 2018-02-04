@@ -1,0 +1,31 @@
+
+Kinesis --
+
+* Streaming data is data generated continously by several data sources in small sizes typically.
+  Eg:- Purchases online, stock prices, game data, social network data, Uber data, etc.
+* Kinesis lets you send that data and analyze it.
+
+Kinesis Services --
+
+* Kinesis Streams
+* Kinesis Firehose
+* Kinesis Analytics
+
+Kinesis Streams --
+
+* Basically stores data for 24 hrs by default. Can increase to 7 days.
+* Stored in shards. A fleet of EC2 instances take them and convert them into meaningful data. Then store them in DynamoDB, S3, Redshift etc.
+* Shard --
+  * 5 transactions per second for reads, max of total data read rate of 2Mb per sec and upto 1000 records per second for writes, max write rate of 1Mb per sec.
+* Data capacity of the stream is the no of shards specified for the stream.
+
+Kinesis Firehose --
+
+* No shards or about handling it.
+* It's automated. Using Lambda is analyzed in realtime.
+* No retention. Directly analyzed or stored into S3 or Redshift ,etc.
+
+
+Kinesis Analytics --
+
+* Allows to run SQL queries on the data stored in Kinesis Streams or Firehose and store in ELasticSearch or S3 or Redshift.

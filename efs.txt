@@ -1,0 +1,18 @@
+
+
+EFS --
+
+* Elastic File System.
+* File storage is elastic, grows or shrinks as necessary. Sort of unlimited.
+* Supports NFSv4 protocol.
+* Pay only for storage used.
+* Can scale to petabytes.
+* Thousands of concurrent NFS connections.
+* Block based storage and can be shared across EC2 instances.
+
+* Not supported in all regions.
+
+* Can be shared among EC2 instances if they are both having or sharing same security groups.
+
+* EFS lets you have one central code directory. Like if index.html is present in EFS and shared across EC2, it will be shown in both. Need not run scripts etc to copy index file etc. File server usage mostly.
+* EBS can only connect to single EC2 instance.

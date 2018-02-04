@@ -1,0 +1,117 @@
+
+S3 --
+
+Provides devs with secure,durable,highly-scalable object storage.
+
+* Files can be from 0 to 5 TB. 
+* Unlimited.
+* FIles are stored in Buckets/Folders.
+* Universal namespace, names must be unique globally.
+* https://s3-eu-west-1.amazonaws.com/acloudguru
+* HTTP 200 if upload is successful.
+
+Data Consistency Model for S3
+
+* Read after Write consistency for PUTS of new Objects (immediate)
+* Eventual Consistency for overwrite PUTS and DELETES (can take some time to propagate)
+
+* S3 is key value store.
+	* Key - Name of the object
+	* Value - bytes
+	* Version ID - versioning
+	* Metadata
+	* Subresources
+	  * Access Control Lists - bucket level or individual file level
+	  * Torrent protocol is supported
+	
+* S3 sorts lexographically/alphabetically. Important point to keep in mind for problems in the exam. Add randomness to the beginning of file name to avoid bottleneck for example in logs which are date based and are similiar.
+* SLA - 99.9 % guaranteed by Amazon.
+* Amazon guarantees 99.999999999 ( 11 x 9's) durability for S3 info.
+* Tiered Storage Available. -- like archive after 90 days etc.
+* LifeCycle Management
+* Versioning
+* Encryption.
+* Secure using bucket poicies or access control lists.
+
+S3 Storage Classes/Tiers (4 types)--
+* S3 - 99.99% availability, 99.999999999% durability, stored redundantly & designed to sustain loss of 2 facilities concurrently.
+
+* S3 - IA (Infrequently Accessed) Lower fee than S3, but charged for retrieval. Payroll data for example.
+
+* Reduced Redundancy Storage (RRS) - 99.99 % durability and 99.99 % availability of objects over a year. Mostly files which you can regenerate like thumbnails which can be stored here but images in S3.
+* Glacier -- Cheap but for archiving. It takes 3- 5 hours to restore.
+
+
+Charges in S3 --
+* Storage 
+* Requests
+* Storage management Pricing
+* Data Transfer Pricing -- Region to region for example
+* Transfer Acceleration -- Transfer data users upload to some edge locations to some S3 bucket. Upload speed increased that way.
+
+* Objects inside bucket don't inherit bucket tag.
+* Min size of object is 0 byte.
+
+Accidentally delete object --
+Prevent by the use of MFA Delete -- 2 auth forms
+ * Security creds
+ * Concatenation of valid serial number, space, six - digit code
+ 
+Versioning --
+* Stores all versions of an object -- so memory consumption is high.
+* Backup tool.
+* Integrates with lifecycle rules.
+* Once enabled cannot be disabled, only suspended.
+* Multipart incomplete download files can be deleted using lifecycle rules.
+
+Replica --
+* Deletion of an object Delete marker is replicated. But deletion of delete marker is not replicated.
+* Versioning is a problem. Deleting version is not replicated.
+
+* Versioning must be enabled on both source and destination.
+* Regions must be unique.
+* Old files are not replicated. Only subsequent updated files are replicated automatically.
+* Cannot replicate in multiple buckets or use daisy chaining.
+* Delete markers are replicated.
+* Deleting individual versions or delete markers are not replicated. Deleting a file as it is, is replicated.
+
+
+S3 - Security & Encryption --
+
+* All buckets are private by default.
+* Bucket Policies 
+* ACL
+* Logs can be made for all accesses.
+
+Encryption --
+* In Transit
+  * SSL/TLS -- HTTPS
+* At REST
+  * Server Side Encryption
+    * S3 Managed Keys - SSE-S3 - Amazon handles all keys and also encrypts keys with rotated master keys.
+	* AWS Key Management Service, Managed Keys - SSE-KMS - Extra charged, Keys used is also logged. 
+	* Server Side Encryption With Customer Provided Keys - SSE-C -- We manage keys.
+  * Client Side Encryption -- We encrypt and upload to S3.
+  
+AWS Storage Gateway --
+
+* Connect on-premise IT env with cloud storage like S3 or Glacier.
+
+4 Types :-
+* File Gateway (NFS) -- Connect to S3 using NFS mount point.
+* Volumes Gateway (iSCSI) -- Block storage which is backup in cloud at a later point as snapshots.
+  * Stored Volumes - completely on-premise but snapshots as Elastic EBS is stored in S3.
+  * Cached Volumes - recent ones on-premise while rest are in S3.
+* Tape Gateway (VTL)
+
+File Gateway -- For flat files, stored directly on S3.
+
+Snowball -
+* Snowball
+* Snowball Edge -- Has compute capacity. Airlines can carry it to compute engines data. Mini AWS enter.
+* Snowball Mobile -- Exabyte scale data center.
+* Import/Export -- Different disks was a problem.
+
+S3 Transfer Acceleration --
+
+* Uses CloudFront to upload to S3. Unique URL is given to which uploads are done who in actuality are Edge Locations but later they are sent to S3 increasing upload speed.

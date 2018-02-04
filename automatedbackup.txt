@@ -1,0 +1,49 @@
+
+Automated Backups --
+
+* It allows you to take daily snapshots up until 35 days. Default is for 7 days.
+* Automated Backup is allowed by default. 
+* It'sstored in S3. Free storage worth the size of RDs is given. 10 GB RDS instance will give you 10GB in S3.
+* Latency can be experienced while backup is going on. Choose proper backup window.
+
+* DB snapshots are done manually. They are stored even after RDS instance has been deleted, unlike automated backups. 
+* Restoring automated backup or snapshot will result in new instance.
+
+* Encryption is supported for SQL DBs. It is done using AWS KMS. This results in data stored at rest being encrypted as are backups, read replicas and snapshots.
+* Encrypting an existing DB instance is not supported.
+
+* To encrypt entirely new DB is to be created.
+
+* Can restore DB to an automated backup or full snapshot or point in time of a snapshot.
+* Cannot encrypt using restoring unencrypted snapshot.
+
+* Multi AZ allows you to have an exact copy in another AZ.
+* This helps for maintenance.
+* Used for disaster  recovery. Not for performance for which read replica is the one to use.
+
+Read Replica --
+
+* Uses asynchronous replication and creates exact copy from where read operation can work unlike in multi AZ.
+* Read replica of read replica is allowed. Upto 5 read replicas is allowed.
+* For test or dev purpose it can be done. It is used by changing connection strings in EC2 instances.
+
+* Supported DB types --
+  * MySQL
+  * Postgre SQL
+  * MariaDB
+
+TIPS --
+
+* Read replica for scaling not for disaster recovery.
+* Multi AZ for disaster recovery.
+* For read intensive applications, use Read replica or Elasticache.
+* Read replicas need automatic backups setup.
+* More read replicas of read replicas increases latency.
+* Each read replica has it's own DNS endpoint.
+* Read replcas cannot have multi AZ.
+* Read replica can be turned on for multi AZ turned on DB.
+
+* Read replicas can be turned on to be their own databases. This breaks the replication. This is done if you want to write to it. 
+* Read replicas can't be written into.
+
+  

@@ -1,0 +1,13 @@
+
+
+ SNS --
+ 
+* Send notifications.
+* Push notifications to Apple, Google, Fire OS.
+* Also SMS, email or SQS queues.
+* SNS lets you group multiple recipients using topics. A topic is an access point for allowing recipients to dynamically subscribe for identical copies of the same 
+  notification. One topic can support deliveries to multiple end points. Like grouping together iOS, Anddroid notifications.
+* Stored in multiple AZ for redundancy.
+
+* Push based. No polling.
+* 

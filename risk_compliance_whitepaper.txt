@@ -1,0 +1,26 @@
+
+RISK & COMPLIANCE
+
+* Shared responsibility
+* AWS management reevaluates security atleast biannually.
+* They hence have strategy for security and compliance.
+
+* They do vulnerability scans on their own infra. Customers need to inform before doing it.
+
+Compliance --
+
+* SOC1
+* SOC2
+* SOC3
+* PCI DSS Level 1
+* FISMA, DIACAP and FedRAMP
+* ISO 27001
+* ISO 9001
+* FIPS 140-2
+* ITAR
+
+Industry specific --
+
+* HIPAA
+* CSA
+* MPAA

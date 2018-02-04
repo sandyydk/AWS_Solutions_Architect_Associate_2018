@@ -1,0 +1,98 @@
+
+EC2 --
+
+* On Demand -- By the hour (by the second for linux only).
+* RI -- Upfront payment and capacity reservation.
+* Spot -- Bid for instance capacity.
+* Dedicated Hosts -- Physical EC2 hardware.
+
+Reserved --
+
+* Steady or predictable usage.
+* Upfront payment gives discount.
+  * Standard RI -- Upto 75% off on demand.
+  * Convertible RIs -- Can convert from Linux RI to WIndows RI. Upto 54% off on demand
+  * Scheduled RIs
+  
+Spot --
+
+* Flexible start and end times
+* Applications feasible at very low compute prices.
+* Users who need urgent capacity for large computing.
+
+Dedicated Hosts --
+
+* Useful for regulatory requirements that may not support multi-tenant virtualization.
+* Great for licensing which does not support multi-tenancy or cloud deployments.
+* Can be purchased On-Demand.
+* Can be purchased as RI also.
+
+EC2 Instance Types --
+
+* D2 - Density -- Hadoop,warehousing 
+* R4 - Memory Optimized.  --> RAM  -- DBs
+* M4 - General purpose -- App Servers
+* C4 - Compute Optimized -- CPU intensive Apps/DBs
+* G2 - Graphics intensive -- 3D App Streaming, Video Encoding
+* I2 -- High speed storage -- NoSQL DBs, Data Warehousing
+* F1 -- FPGA -- H/w acceleration for code
+* T2 -- Lowest cost, General Purpose -- Web Servers/Small DBs
+* P2 -- Graphics/General Purpose GPU -- Machine Learning, Bitcoin mining
+* X1 -- Xtreme memory -- SAP HANA/Apache Spark
+
+
+Pricing --
+
+* By the second for linux instances but by the hour for Windows instances.
+
+
+IMPORTANT --
+DIRTMCGFPX or DR Mc GIFT PX
+
+D - Density
+R - RAM
+M - main choice for general purpose apps
+C - Compute
+G - Graphics
+I - IOPS
+F - FPGA -- H/w optimization
+T - cheap general purpose T2 micro
+P - Graphics (think pics)
+X - Extreme Memory
+
+
+EBS Volumes Types --
+
+* General Purpose SSD (GP2)
+  * balance price and performance.
+  * 3 IOPS per GB with upto 10000 IOPS and ability to burst upto 3000 IOPS for volumes at 3334GiB and above.
+* Provisioned IOPS SSD (IO1)
+  * Designed for I/O intensive apps such as NoSQl or large relationl databases.
+  * Used if IOPS requiredis more than 10000 IOPS.
+  * Upto 20000 IOPS per Volume.
+* Throughput Optimized HDD (ST1) -- Magnetic storage type
+  * Big databases
+  * Data warehouses
+  * Log processing
+  * Cannot be a boot volume
+* Cold HDD (SC1) -- Magnetic storage type
+  * Lowest cost storage for infrequently used workloads.
+  * File server.
+  * Cannot be boot server.
+* magnetic (Standard)
+  * Lowest cost per gigabyte of all EBS volume types that is bootable. Magnetic volumes is ideal for infrequently accessed data and for low storage cost.
+  * Bootable.
+  
+* Can't mount one EBS volume to multiple EC2 instances, instead use EFS. EBS is more like internal hard disk.
+* One subet equals one availability zone.
+
+
+* Volume attached to EC2 is deleted on termination by default.
+* Termination Protection is turned off by default.
+
+To get metadata --
+
+* curl http://169.254.169.254/latest/meta-data/   -- IMPORTANT
+
+
+

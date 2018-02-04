@@ -1,0 +1,7 @@
+
+
+Network ACL --
+
+* A subnet can be associated with only one ACL.
+* A new ACL by default has DENY for both inbound and outbound traffic for all traffic.
+* Rules are evaluated in numerical order.

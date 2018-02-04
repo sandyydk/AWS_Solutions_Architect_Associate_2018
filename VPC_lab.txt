@@ -1,0 +1,50 @@
+
+VPC Lab --
+
+* A new VPC creates with it a security Group, Network ACL, Route Table. No subnet though.
+
+ IMPORTANT
+* The first 4 IP addresses and the last IP address in each subnet is not available for use and cannot be assigned to an instance.
+
+ If a subnet CIDR is 10.0.0.0/24
+
+* 10.0.0.0 : Network address
+* 10.0.0.1 : Reserved by AWS for VPC router.
+* 10.0.0.2 : Reserved by AWS. IP address of DNS server. For VPCs with multiple subnets primary subnet base plus 2 is DNS server address.
+* 10.0.0.3 : Future use.
+* 10.0.0.255: Network Broadcast address. Broadcast not supported in VPC. Reserved address.
+
+* Only one internet gateway can be attached to a VPC. Same name cannot be used for multiple gateways either.
+* Every time a subnet is created it is by default associated to the main route table.
+
+* If main route table is the only route table, then it will have access to internet as we have also created a gateway. So by default all subnets will be internet accessible.
+  Which is not desirable.
+* Security groups are limited to a VPC. They don't span across VPCs.
+
+* NAT is used to provide internet access to private instance without adding public subnet.
+* This is done by launching an instance -- a NAT instance.
+* Need to disable source/destination checks but only in NAT instances and not in NAT gateway.
+
+* 10.0.0.0/16 is the largest CIDR possible.
+* A VPC created creates Route Table, Security Group and NACL by default.
+* Internet gateway on creation by default is detached. Attach it to VPC.
+* A subnet by default gets attached to main Route Table and hence internet access is allowed to it. To make it private create another Route Table give it internet sccess by adding
+  a route and associating a subnet with it.
+* By default public ip addresses are not assigned to a subnet. This should be modified in subnets listing.
+
+NAT --
+
+* Need to disable source/destination check on the instance.
+* NAT instances must be in a public subnet.
+* There must be a route out of private subnet to the NAT instance for this to work.
+* NAT traffic depends on the instance type. Bottleneck issue is present. NAT gateway is preferred.
+
+
+NAT Gateway --
+
+* Can scale to 10 GBps.
+* No patching required.
+* Not associated to security groups.
+* No disabling anything.
+* More secure than NAT instance.
+

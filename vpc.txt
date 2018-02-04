@@ -1,0 +1,49 @@
+
+VPC -- IMPORTANT
+
+* Virtual Data Center
+* Every region has default VPC.
+* AWS defines VPC as isolated section of AWS Cloud where you launch AWS resources in a virtual network that you define. You have complete control over your networking
+  environment in that you can choose IP addresses, creation of subnets and configuration of route tables and network gateways.
+  
+  
+* One subnet = one AZ -- IMPORTANT
+
+* Address ranges supported by AWS for private subnet --
+  10.0.0.0 - 10.255.255.255 - 10/8 prefix -- most addresses
+  172.16.0.0 - 172.16.255.255 - 173.16/12 -- less than first one
+  192.168.0.0 - 192.168.255.255 - 192.168/16 -- least addresses
+  
+  Max netmask is 28 -- which gives 16 addresses. 10.0.0.0/28  -- Range -> 10.0.0.1 - 10.0.0.14
+  
+  
+* 5 VPCs in a region. Soft limit can be raised by contacting AWS support team.
+
+* Each subnet goes into separate AZs and addresses can then be assigned to them.
+
+What can be done with a VPC --
+
+* Launch instances into a subnet of your choosing.
+* Assign custom IP address ranges in each subnet.
+* Configure route tables b/w subnets. This would let you block two subnets from communicating with each other if required.
+* Create internet gateway and attach it to our VPC. ONLY 1 internet Gateway per VPC.
+* Better security.
+* Instance security groups. Security groups can span AZs and be shared as well.
+* Subnet ACLs. Block IP addresses if necessary.
+
+Default VPC v/s Custom VPC --
+
+* Default VPC is user friendly and it's created by AWS in every single region when you create an account.
+* Default VPC has internet gateway enabled. No private subnets by default. Have to create if necessary.
+* If deployed into default VPC, each EC2 instance will have private and public IPs.
+
+VPC Peering --
+
+* Allows you to connect VPCs using a direct network route using private IP addresses.
+* Instances behave as if they are in the same network.
+* VPC Peering can be done with VPCs in same account or different AWS account.
+* VPC is in Star Configuration. Hub and Spoke model. 1 central VPC with multiple Peers. 
+  No transitive peering. Means VPC A connected to VPC B and VPC C won't let VPC C and VPC B communicate. For that VPC C and VPC B need to have direct peering.
+  
+* Security Groups are STATEFUL but Network Access Lists are NOT.
+  If port 80 is opened in security group, then inbound and outbound also it's opened. But in Network Access List that's to be done separaately for inbound and outbound.

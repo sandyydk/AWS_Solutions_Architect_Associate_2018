@@ -1,0 +1,39 @@
+
+Databases --
+
+* Relational - SQL  Server, Oracle, MySQL Server, PostgreSQL, Aurora, MariaDB
+* Non-relational DBs - DynamoDB -- Document oriented.
+
+
+Data Warehousing --
+
+* used for BI.
+* Used to pull large data sets.
+
+OLTP vs OLAP diff types of queries run 
+* OLTP -- Online transaction processing
+* OLAP -- Online Analytics Processing
+
+OLTP example --
+
+* Order number 2120121
+  Pulls up a row of data such as name, Date, Address, Delivery status, etc
+  
+OLAP example --
+
+* Net profit for EMEA and Pacific for Digital Radio Product.
+  Pulls in large amount of data.
+  Sum of Radios sold.
+  Unit Cost of Radio in each region.
+  
+* Data Warehousing databases use different type of arch both from a database perspective and infra layer.
+
+
+Elasticache --
+
+* Elasticache is a web service that makes it easy to deploy, operate and scale in-memory cache in the cloud.
+* Service improves performance of web applications by allowing you to retrieve info from fast, managed, in memory caches, instead of relying entirely on slower disk-based dbs.
+
+* Supports two open source in-memory caching engines :
+  * Memcached
+  * Redis

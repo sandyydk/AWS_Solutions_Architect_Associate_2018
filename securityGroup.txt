@@ -1,0 +1,13 @@
+
+Security Groups --
+
+* Any rule to security group applies immediately.
+* Security groups are stateful. Inbound rules added means outbound rules are necessary. In short, anything that goes in comes out. So if HTTP is allowed in inbound, it is allowed in
+  outbound as well.
+* Multiple security groups allowed.
+
+* All Inbound traffic is blocked by default.
+* All outgbound traffic is allowed.
+
+* Security groups are STATEFUL but network access lists are not.
+* Only allow rules are in security groups, no deny rules.

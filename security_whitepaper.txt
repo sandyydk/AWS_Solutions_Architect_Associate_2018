@@ -1,0 +1,40 @@
+
+Security Processes Whitepaper --
+
+* 20% of the paper.
+* AWS is responsible for the infra and you are responsible for anything you put on them. SHared responsibility model.
+* AWS is responsible for managed services --
+  * RDS
+  * DynamoDB
+  * Redshift
+  * Elastic MapReduce
+  * WorkSpaces
+  
+* STORAGE DECOMMISIONING --
+
+* Decommissioned magnetic storage devices are degaused and physically destroyed in accordance with industry standard practices.
+* DoD 5220.22-M or NIST 800-88
+
+* VPC is provided.
+* IPsec VPN for additional protection between AWS VPC and your data center.
+* SSL on HTTPS
+
+* Amazon.com is not the same as AWS network. THis is called Amzon Corporate Segregation.
+
+Network Monitoring & Protection --
+
+* DDoS
+* Man In The Middle (MITM)
+* Ip Spoofing
+* Port Scanning -- Not allowed by default. Can get permission for vulnerability testing by asking in advance.
+* Packet Sniffing by other tenants.
+
+AWS Trusted Advisor --
+
+* Makes recommendations to save money, improve system performance or close security gaps by inspecting environment.
+
+Instance Isolation --
+
+* Xen hypervisor is used to isolate instances running on the same physical machine.
+* Also there's an AWS firewall.
+* RAM is also similarly isolated.

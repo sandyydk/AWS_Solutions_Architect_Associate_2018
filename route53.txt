@@ -1,0 +1,85 @@
+
+DNS --
+
+* IANA controls top level domain names.
+* A registrar is an authority that can assign domain names directly under one or more top-level domains.
+* Domains are registered with InterNIC, a service of ICANN which enforeces uniqueness of domain names across internet. 
+* Each domain is registered in central DB called WhoIs.
+
+
+SOA --
+
+* SOA record stores info about --
+  * The name of the server that supplied data for the zone.
+  * Admin of the zone.
+  
+NS Records --
+  
+* Name Server Records are used by top-level domain servers to direct traffic to the content DNS server which contains authoritative DNS records.
+
+A Records --
+
+* A records stands for Address.
+* Most fundamental type of DNS record.
+* Used by a computer to translate the name of the domain to the IP address.  
+
+TTL --
+
+* Time To Live
+* The lower the TTL, the faster changes to DNS records take to propagate throughout internet.
+* Time it's cached on resolving server or users local PC.
+
+CNAMES --
+
+* Canonical names used to resolve one domain name to another.
+* For ex, point mobile.cloud.guru to m.cloud.guru.
+
+ALIAS --
+
+* Amazon uses this. Not global terminology. 
+* Used to map resource record sets in your hosted zone to Elastic Load Balancers, CloudFront distributions or S3 buckets that are configured as websites. If we remeber, ELB provides DNS and not IP. To map to this ALIAS helps.
+* Alias records work like a CNAME record in that you can map one DNS name(www.example.com) to another target DNS name (elb1234.amazonaws.com).
+
+
+* Route53 is a global service.
+
+Routing Policies --
+
+* Simple 
+* Weighted
+* Latency
+* Failover
+* Geolocation
+
+Simple --
+
+* Used when you got only one web server. Default policy when you create a new record set.
+
+Weighted --
+
+* You can divide traffic in percentages across regions, like 20% to us-east01 and rest to us-west-1. It need not be two different regions , it can be two different ELBs.
+
+Latency --
+
+* Allows to route traffic based on lowest latency for end user.
+* Is done by creating latency resource record set for Amazon EC2 (or ELB) in each reguon that hosts your website. When a query is received, Route53 selects the latency record set which gives the lowest latency.
+
+Failover --
+
+* Policies used when you want to create an active/passive set up. For ex, primary site is in eu-west-2 and secondary in ap-southeast-2. 
+* Route53 will monitor the health of your primary site using health check.
+
+
+Geolocation --
+
+* Routing based on geolocation.
+
+
+TIPS --
+
+* ELB gives DNS not an IP.
+* Difference between CNAME and Alias Record.
+* CHoose between ALias over CNAME in questions in exam.
+* Remember 5 types of policies.
+* DNS Port is on Port 53. Hence Route53.
+* Route53 supports 50 domain names by default. It's a soft limit, can be raised by contacting AWS support.

@@ -1,0 +1,16 @@
+
+CloudWatch --
+
+* Metrics available in CloudWatch for instance are CPU based, Network based, Disk based, Status based.
+* STandard monitoring = 5 minutes.
+* Detailed monitoring = 1 minute.
+
+Things you can do with CloudWatch --
+
+* Dashboards
+* Alarms
+* Logs
+* Events
+
+* CloudTrail and CloudWatch are different in the sense that CloudTrail watches/monitors AWS environment like creating S3 bucket, user logging into AWS account, etc where CloudWatch monitors metrics.
+CloudTrail is for auditing purpose.

@@ -1,0 +1,10 @@
+
+
+Storage Options in the Cloud --
+
+AWS Storage Gateway --
+
+* Connect on premise IT to AWS network.
+* Types --
+  * Gateway-cached volumes -- AWS S3 is used to store primary data while retaining some portion locally in a cache for frequently accessed data. Upto 32TB.
+  * Gateway-stored volumes -- Primary data is stored locally but backup is done asynchronously in S3. Upto 1TB. Backed up as EBS Snapshots.
